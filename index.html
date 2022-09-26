@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
+    <!-- jsx 를 사용하기 위해 babel 컴파일러 사용 -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <div id="root"></div>
+    <script type="text/babel">
+      const rootElement = document.getElementById("root");
+      // const element = document.createElement('hi');
+      // const element = React.createElement(
+      //   'h1',
+      //   {
+      //     className: "title",
+      //     children: ['Hello!!!', " It's me"]
+      //   },
+      // );
+      // const text = "Hello,world!";
+      // const titleClassName = "title";
+      // const element = <h1 className={titleClassName}>{text}</h1>;
+      // const props = {className: titleClassName, children: text};
+      // const element = <h1 {...props} />
+      // // element.textContent = 'Hello. world!';
+      // console.log(element);
+      // ReactDOM.render(element, rootElement);
+      // // rootElement.appendChild(element);
+
+      // const text = "Hi";
+      // const element =
+      //   <>
+      //     <h1 className='title'>{text}</h1>
+      //     <h3>Bye</h3>
+      //     <h5>Children</h5>
+      //   </>
+      // console.log(element);
+
+
+      // const  paint = (title, description) => (
+      //   <>
+      //     <h1>{title}</h1>
+      //     <h3>{description}</h3>
+      //   </>
+      // );
+      // const element = (
+      //   <>
+      //   {paint('Good', 'good')}
+      //   {paint('Bad', 'bad')}
+      //   {paint('So so', 'so so')}
+      //   </>
+      // );
+
+
+      // const Paint = ({title, description, children}) => {
+      //   return (
+      //     <>
+      //       <h1>{title}</h1>
+      //       <h3>{description}</h3>
+      //       {children}
+      //     </>
+      //   );
+      // };
+
+      // const element = (
+      //   <>
+      //     <Paint title='Good' description='good'>
+      //       <span>Hi</span>
+      //     </Paint>  
+      //     <Paint title='Bad' description='bad' />
+      //     <Paint title='So so' description='so so' />
+      //   </>
+      // );
+
+      
+      // const Text = ({ text }) => {
+      //   if (text.charAt(0) === text.charAt(0).toUpperCase()) {
+      //     return (
+      //       <h1>{text}</h1>
+      //     );
+      //   } else {
+      //     return (
+      //       <h3>{text}</h3>
+      //     );
+      //   }
+      // };
+
+      // const element = (
+      //   <>
+      //     <Text text='Text' />
+      //     <Text text='text' />
+      //   </>
+      // )
+
+
+      // const Number = ({number, selected}) => {
+      //   return number % 2 === 0 ? <h1>{number}</h1> : <h3>{number}</h3>;
+      // }
+      const Number = ({number, selected}) => {
+        return selected ? <h1>{number}</h1> : <h3>{number}</h3>;
+      }
+      
+      // const element = (
+      //   <>
+      //     <Number number={1} />
+      //     <Number number={2} selected={true} />
+      //     <Number number={3} />
+      //     <Number number={4} />
+      //   </>
+      // )
+      const element = (
+        <>
+          {[1,2,3,4,5,6,7,8,9,10].map((number) => (
+            <Number className='title' key={number} number={number} selected={number % 3 === 0} />
+          ))}
+        </>
+      )
+
+
+      ReactDOM.render(element, rootElement);
+    </script>
+  </body>
+</html>
+
+
