@@ -20,3 +20,43 @@
 // 프론트엔드 개발의 장점? 
 // 눈에 보인다, 바로 확인할 수 있다.
 
+
+// 리액트와 리랜더링 
+// 바닐라 JS : 변경으로 인해 Element를 다시 그림
+// React : 변경된 부분만 다시 그림
+
+// React 앨리먼트는 불변객체(immutable) : 변하지 않는 객체.
+// 앨리먼트 타입이 바뀌면 이전 앨리먼트는 버리고 새로 그림
+// 앨리먼트 타입이 같다면 1. key 비교, 2. pros 비교하여 변경사항 반영
+
+
+// 이벤트
+// 바닐라JS : onclick ~ / addEventListener
+// React : onClick ~ (카멜 케이스)
+
+// Object.assign : 객체 내용 복사
+// 전역 변수 변경 : ReactDOM.render
+
+
+// DOM : 논리 트리
+// 컴포넌트 : 앨리먼트의 집합
+// 앨리먼트 : 요소
+// useState : 상태값을 관리해주는 훅 
+
+
+// 사이트 이펙트 = 부작용
+// 의도하지 않은 효과 vs 부수 효과
+// useState : lasy initialize
+// useEffect : dependency array
+
+
+// 커스텀 훅 만들기
+// 반복 : 함수로
+// 훅들이 반복 : custom Hook으로
+
+
+// hook flow 훅의 호출 타이밍
+// useState : setState 시 prev 주입됨 setShow((prev) => !prev);
+// useEffect : render가 끝난 뒤
+// update 시 : useEffect clean up / useEffect
+// dependency array : 전달받은 값의 변화 있는 경우에만
