@@ -311,98 +311,268 @@
       // ReactDOM.render(<App />, rootElement);
 
       // hook flow
+      // const rootElement = document.getElementById("root");
+
+      // const Child = () => {
+      //   const [text, setText] = React.useState(() => {
+      //     console.log("Child useState");
+      //     return "";
+      //   });
+
+      //   console.log("Child render start");
+
+      //   React.useEffect(() => {
+      //     console.log("Child useEffect, no deps");
+
+      //     return () => {
+      //       console.log('Child useEffect [Cleanup], no deps');
+      //     }
+      //   });
+
+      //   React.useEffect(() => {
+      //     console.log("Child useEffect, empty deps");
+
+      //     return () => {
+      //       console.log('Child useEffect [Cleanup], empty deps');
+      //     }
+      //   }, []);
+
+      //   React.useEffect(() => {
+      //     console.log("Child useEffect, [text]");
+
+      //     return () => {
+      //       console.log('Child useEffect [Cleanup], [text]');
+      //     }
+      //   }, [text]);
+
+      //   function handleChange(event) {
+      //     setText(event.target.value);
+      //   }
+
+      //   const element = (
+      //     <>
+      //       <input onChange={handleChange} />
+      //       <p>{text}</p>
+      //     </>
+      //   );
+      //   console.log("Child render end");
+      //   return element;
+      // };
+
+      // const App = () => {
+      //   console.log("App render start");
+      //   const [show, setShow] = React.useState(() => {
+      //     console.log("App useState");
+      //     return false;
+      //   });
+
+      //   React.useEffect(() => {
+      //     console.log("App useEffect, no deps");
+
+      //     return () => {
+      //       console.log('App useEffect [Cleanup], no deps');
+      //     }
+      //   }); // 모든 것에 반응
+      //   React.useEffect(() => {
+      //     console.log("App useEffect, empty deps");
+
+      //     return () => {
+      //       console.log('App useEffect [Cleanup], empty deps');
+      //     }
+      //   }, []); // 첫 랜더 될 때 반응
+      //   React.useEffect(() => {
+      //     console.log("App useEffect, [show]");
+
+      //     return () => {
+      //       console.log('App useEffect [Cleanup], [show]');
+      //     }
+      //   }, [show]); // 배열 안의 값이 바뀔 때 반응
+
+      //   function handleClick() {
+      //     setShow((prev) => !prev);
+      //     // if(show) {
+      //     //   setShow(false);
+      //     // } else {
+      //     //   setShow(true);
+      //     // }
+      //   }
+
+      //   console.log("App render end");
+
+      //   return (
+      //     <>
+      //       <button onClick={handleClick}>Search</button>
+      //       {show ? <Child /> : null}
+      //     </>
+      //   );
+      // };
+
+      // ReactDOM.render(<App />, rootElement);
+
+      // 리액트 Element에 스타일 입히기 > 강의가 방향성 없이 진행되어 따라할 수 없음
+      // const rootElement = document.getElementById("root");
+
+      // function Button(props) {
+      //   return <button {...props} />;
+      // }
+
+      // const element = (
+      //   <>
+      //     <Button className="button" style={{ borderRadius: "50%" }}>
+      //       Green
+      //     </Button>
+      //     <Button className="button button2">Blue</Button>
+      //     <Button className="button button3">Red</Button>
+      //     <Button className="button button4">Gray</Button>
+      //     <Button className="button button5">Black</Button>
+      //   </>
+      // );
+
+      // ReactDOM.render(element, rootElement);
+
+      // Rdf로 DOM 다루기
+      // const rootElement = document.getElementById("root");
+
+      // const App = () => {
+      //   const inputRef = React.useRef();
+      //   const divRef = React.useRef();
+
+      //   React.useEffect(() => {
+      //     // document.getElementById('input').focus();
+      //     inputRef.current.focus();
+
+      //     setTimeout(() => {
+      //       divRef.current.style.backgroundColor = 'pink';
+      //     }, 1000);
+      //   }, []);
+
+      //   return (
+      //     <>
+      //       <input ref={inputRef} />
+      //       <div ref={divRef} style={{height:100, width:300, backgroundColor: 'brown'}}></div>
+      //     </>
+      //   );
+      // };
+
+      // ReactDOM.render(<App />, rootElement);
+
+      // FORM 다루기
+      // const rootElement = document.getElementById("root");
+
+      // const App = () => {
+      //   const handleSubmit = (event) => {
+      //     event.preventDefault();
+
+      //     console.dir(event.target.elements);
+      //     alert(`FirstName: ${event.target[0].value}, LastName: ${event.target.elements.lname.value}, Choosed Car: ${event.target.elements.cars.value}`);
+      //   };
+
+      //   return (
+      //     <form onSubmit={handleSubmit}>
+      //       <label htmlFor="fname">First name:</label>
+      //       <br />
+      //       <input type="text" id="fname" name="fname" defaultValue="John" />
+      //       <br />
+      //       <label htmlFor="lname">Last name:</label>
+      //       <br />
+      //       <input type="text" id="lname" name="lname" defaultValue="Doe" />
+      //       <br />
+      //       <br />
+      //       <label htmlFor="cars">Choose a car: </label>
+      //       <select id="cars" name="cars">
+      //         <option value="volvo">Volvo</option>
+      //         <option value="saab">Saab</option>
+      //         <option value="fiat">Fiat</option>
+      //         <option value="audi">Audi</option>
+      //       </select>
+      //       <br />
+      //       <br />
+      //       <input type="submit" value="Submit" />
+      //     </form>
+      //   );
+      // };
+
+      // ReactDOM.render(<App />, rootElement);
+
+      // Form 다루기 2
+      // const rootElement = document.getElementById("root");
+
+      // const App = () => {
+      //   const [message, setMessage] = React.useState("");
+      //   const [phoneNumber, setPhoneNumber] = React.useState("");
+
+      //   const handleSubmit = (event) => {
+      //     event.preventDafault;
+
+      //     alert(phoneNumber);
+      //   };
+
+      //   const handleChange = (event) => {
+      //     if (event.target.value.startsWith(0)) {
+      //       setMessage("Phone Number is valid");
+      //       setPhoneNumber(event.target.value);
+      //     } else if(event.target.value.length === 0) {
+      //       setPhoneNumber('');
+      //       setMessage('');
+      //     } else {
+      //       setMessage("Phone Number should starts with 0");
+      //     }
+      //   };
+
+      //   return (
+      //     <form onSubmit={handleSubmit}>
+      //       <label htmlFor="phone">Pgone Number: </label>
+      //       <br />
+      //       <input id="phone" name="phone" onChange={handleChange} value={phoneNumber} />
+      //       <p>{message}</p>
+      //       <br />
+      //       <br />
+      //       <button type="submit" disabled={phoneNumber.length === 0 || message !== "Phone Number is valid"}>
+      //         Submit
+      //       </button>
+      //       <p>{phoneNumber}</p>
+      //     </form>
+      //   );
+      // };
+      // ReactDOM.render(<App />, rootElement);
+
+      //  Error
       const rootElement = document.getElementById("root");
 
-      const Child = () => {
-        const [text, setText] = React.useState(() => {
-          console.log("Child useState");
-          return "";
-        });
-
-        console.log("Child render start");
-
-        React.useEffect(() => {
-          console.log("Child useEffect, no deps");
-
-          return () => {
-            console.log('Child useEffect [Cleanup], no deps');
-          }
-        });
-
-        React.useEffect(() => {
-          console.log("Child useEffect, empty deps");
-
-          return () => {
-            console.log('Child useEffect [Cleanup], empty deps');
-          }
-        }, []);
-
-        React.useEffect(() => {
-          console.log("Child useEffect, [text]");
-
-          return () => {
-            console.log('Child useEffect [Cleanup], [text]');
-          }
-        }, [text]);
-
-        function handleChange(event) {
-          setText(event.target.value);
+      class ErrorBoundary extends React.Component {
+        state = { error: null };
+        static getDerivedStateFromError(error) {
+          return { error };
         }
 
-        const element = (
-          <>
-            <input onChange={handleChange} />
-            <p>{text}</p>
-          </>
-        );
-        console.log("Child render end");
-        return element;
+        render() {
+          const { error } = this.state;
+          if (error) {
+            return <this.props.fallback error={error} />;
+          }
+
+          return this.props.children;
+        }
+      }
+
+      const Child = () => {
+        throw new Error("Something Wrong...");
+
+        return <p>Child...</p>;
+      };
+
+      const Fallback = ({ error }) => {
+        // alert(error.message);
+        return <p>{error.message}</p>;
       };
 
       const App = () => {
-        console.log("App render start");
-        const [show, setShow] = React.useState(() => {
-          console.log("App useState");
-          return false;
-        });
-
-        React.useEffect(() => {
-          console.log("App useEffect, no deps");
-
-          return () => {
-            console.log('App useEffect [Cleanup], no deps');
-          }
-        }); // 모든 것에 반응
-        React.useEffect(() => {
-          console.log("App useEffect, empty deps");
-
-          return () => {
-            console.log('App useEffect [Cleanup], empty deps');
-          }
-        }, []); // 첫 랜더 될 때 반응
-        React.useEffect(() => {
-          console.log("App useEffect, [show]");
-
-          return () => {
-            console.log('App useEffect [Cleanup], [show]');
-          }
-        }, [show]); // 배열 안의 값이 바뀔 때 반응
-
-        function handleClick() {
-          setShow((prev) => !prev);
-          // if(show) {
-          //   setShow(false);
-          // } else {
-          //   setShow(true);
-          // }
-        }
-
-        console.log("App render end");
-
         return (
           <>
-            <button onClick={handleClick}>Search</button>
-            {show ? <Child /> : null}
+            <p>App</p>
+            <ErrorBoundary fallback={Fallback}>
+              <Child />
+            </ErrorBoundary>
           </>
         );
       };

@@ -60,3 +60,22 @@
 // useEffect : render가 끝난 뒤
 // update 시 : useEffect clean up / useEffect
 // dependency array : 전달받은 값의 변화 있는 경우에만
+
+
+// Ref로 Dom 다루기
+// Vanilla JS : document.get~ / document.query~
+// React : useRef / ref 
+
+
+// Form 다루기
+// onSubmit : event.preventDefault()
+// event.target.elements : console.dir(element)
+
+// validatioin : onChange
+// controlled : input의 value를 직접 관리
+
+
+// Error 다루기
+// Error Boundary : Catch Error 해서 보여주기
+// Fallback : Errror가 났을 때 보여줄 컴포넌트
+
