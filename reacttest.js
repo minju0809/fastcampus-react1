@@ -79,3 +79,11 @@
 // Error Boundary : Catch Error 해서 보여주기
 // Fallback : Errror가 났을 때 보여줄 컴포넌트
 
+
+// 상태 끌어올리기
+// 형제 컴포넌트의 상태 궁금 : 필요하면 부모로 lifting up 
+// Props drilling : 과도한 lifting은 drilling을 야기
+
+
+// Fetch API / 네트워크 통신 도구
+// 
